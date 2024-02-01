@@ -92,12 +92,7 @@ export default {
     methods: {
         async loadData() {
             const getProfile = await this.$fire.firestore.collection("members").doc(this.$store.getters.getLine.userId).get().then((res) => {
-                this.form.house_no = res.data().house_no
-                this.form.village_no = res.data().village_no
-                this.form.village = res.data().village
-                this.form.province = res.data().province
-                this.form.district = res.data().district
-                this.form.subdistrict = res.data().subdistrict
+                this.form = res.data()
             });
 
             return getProfile
