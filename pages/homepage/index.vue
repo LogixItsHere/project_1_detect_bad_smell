@@ -55,15 +55,13 @@ export default {
     data() {
         return {
             dialog: false,
-            lists: [],
-            sitthi: this.$store.getters.getSetthi,
+            lists: this.$store.getters.getSetthi,
             search: null,
             page: 1,
             perPage: 5,
         }
     },
     mounted() {
-        this.lists = this.sitthi
         this.search = this.$route.query.search
     },
     computed: {
